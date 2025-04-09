@@ -3,7 +3,8 @@
 
 A React component for mark and highlighting words within text with flexible word boundary matching and customizable styling.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://raw.githubusercontent.com/hey-lee/slice-text/refs/heads/main/LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://raw.githubusercontent.com/hey-lee/slice-text/refs/heads/main/LICENSE) [![size](https://img.shields.io/bundlephobia/min/slice-text)](https://bundlephobia.com/package/react-mark-words)
+
 
 ## Features
 
@@ -52,14 +53,18 @@ function App() {
         unmarked: 'custom-unmarked',
       }}
       containerTag="p"
-      unmarkedTag={({ children }) => {
-        return <span>{children}</span>
+      unmarkedTag={({ children, className }) => {
+        return (
+          <span
+            className={className} // custom-unmarked
+          >{children}</span>
+        )
       }} // custom unmarked component
-      markedTag={({ children }) => {
+      markedTag={({ children, className }) => {
         return (
           <HoverCard>
             <HoverCardTrigger
-              className={markedColor}
+              className={className} // custom-marked
             >
               {children}
             </HoverCardTrigger>
@@ -76,21 +81,64 @@ function App() {
 
 ## API
 
-### `MarkWords`
+### `MarkWords({ text, words, ... })`
 
-|Parameter|Type|Required|Default|Description|
-|:-:|:-:|:-:|:-:|:-:|
-|`text`| `string` | ✅ |  | The text content to be processed |
-|`words`| `string[]` | ✅ |  | Array of words or phrases to be marked |
-|`className`| `string` |  |  | Optional className for the container element |
-|`classNames`| `{ marked: string, unmarked: string }` |  |  | Optional classNames for marked and unmarked text segments |
-|`escape`| `boolean` |  | `true` | Whether to escape special RegExp characters in search words. Default: true |
-|`caseSensitive`| `boolean` |  | `false` | Whether the search should be case-sensitive. Default: false |
-|`boundary`| `boolean` |  | `true` | Word boundary matching behavior. Default: true |
-|`markedTag`| `string \| React.ComponentType<any>` |  | `mark` | Custom component or HTML tag for marked text. Default: 'mark' |
-|`unmarkedTag`| `string \| React.ComponentType<any>` |  | `({ children }) => children` | Custom component or HTML tag for unmarked text. Default: text-only component |
-|`containerTag`| `string \| React.ComponentType<any>` |  | `div` | Container element tag or component. Default: 'div' |
-|`match`| `(word: string) => RegExp` |  | `(word) => new RegExp('\\b${word}\\b', 'gi')` | Optional custom matching function |
+The main component for marking words within text.
+
+#### `text`
+
+Type: `string`
+The text content to be processed
+
+#### `words`
+
+Type: `string[]`
+Array of words or phrases to be marked
+
+#### `className`
+
+Type: `string?`
+Optional className for the container element
+
+#### `classNames`
+
+Type: `{ marked: string, unmarked: string }?`
+Optional classNames for marked and unmarked text segments
+
+#### `escape`
+
+Type: `boolean?`
+Whether to escape special RegExp characters in search words. Default: `true`
+
+#### `caseSensitive`
+
+Type: `boolean?`
+Whether the search should be case-sensitive. Default: `false`
+
+#### `boundary`
+
+Type: `boolean?`
+Word boundary matching behavior. Default: `true`
+
+#### `markedTag`
+
+Type: `string | React.ComponentType<any>?`
+Custom component or HTML tag for marked text. Default:'mark'
+
+#### `unmarkedTag`
+
+Type: `string | React.ComponentType<any>?`
+Custom component or HTML tag for unmarked text. Default: text-only component
+
+#### `containerTag`
+
+Type: `string | React.ComponentType<any>?`
+Container element tag or component. Default: 'div'
+
+#### `match`
+
+Type: `(word: string) => RegExp?`
+Optional custom matching function
 
 ## License
 
