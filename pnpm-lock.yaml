@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       slice-text:
-        specifier: ^0.0.1
-        version: 0.0.1
+        specifier: ^0.0.4
+        version: 0.0.4
     devDependencies:
       '@swc/core':
         specifier: ^1.5.7
@@ -949,8 +949,8 @@ packages:
     resolution: {integrity: sha512-bzyZ1e88w9O1iNJbKnOlvYTrWPDl46O1bG0D3XInv+9tkPrxrN8jUUTiFlDkkmKWgn1M6CfIA13SuGqOa9Korw==}
     engines: {node: '>=14'}
 
-  slice-text@0.0.1:
-    resolution: {integrity: sha512-hylII+g+gNAfaAr90GIEQBPUcywOfMSdyAduq/xPLdh2G+fXKNmxXmmqM1kr3ax+jeR/EqZkthqM6Y9sZVDAvw==}
+  slice-text@0.0.4:
+    resolution: {integrity: sha512-VtjlI5moSU3DPUNAyfmv+rr9dPg9XQHPdg3ruNvJH5NJ9u9aUJl/mLKeX4xyW3wke/ZoVF38KO3Lt8DFUhL+gA==}
 
   source-map-js@1.2.1:
     resolution: {integrity: sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==}
@@ -1852,7 +1852,7 @@ snapshots:
 
   signal-exit@4.1.0: {}
 
-  slice-text@0.0.1: {}
+  slice-text@0.0.4: {}
 
   source-map-js@1.2.1: {}
 

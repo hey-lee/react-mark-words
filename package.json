@@ -1,6 +1,6 @@
 {
   "name": "react-mark-words",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A React component for mark and highlighting words within text with flexible word boundary matching and customizable styling.",
   "license": "MIT",
   "type": "module",
@@ -15,14 +15,15 @@
   "tsup": {
     "target": "es5",
     "entry": [
-      "src/fns",
       "src/index.ts"
     ],
     "format": [
       "esm",
       "cjs"
     ],
-    "noExternal": ["slice-text"],
+    "noExternal": [
+      "slice-text"
+    ],
     "dts": true,
     "clean": true,
     "sourcemap": true,
@@ -73,7 +74,7 @@
     "vitest": "^3.1.1"
   },
   "dependencies": {
-    "slice-text": "^0.0.1"
+    "slice-text": "^0.0.4"
   },
   "peerDependencies": {
     "react": "^19.1.0"
