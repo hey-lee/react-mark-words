@@ -1,7 +1,6 @@
 
 import { createElement } from 'react'
 import { sliceText } from 'slice-text'
-import { escapeRegExp, getPattern } from './fns'
 
 /**
  * Props interface for the MarkWords component
@@ -88,15 +87,15 @@ export const MarkWords = ({
   markedTag = `mark`,
   unmarkedTag = UnmarkedTag,
   containerTag = `div`,
-  match = word => {
-    return new RegExp(
-      getPattern(escapeRegExp(word), boundary),
-      caseSensitive ? `g` : `gi`,
-    )
-  },
+  match,
   ...props
 }: MarkWordsProps) => {
-  const slices = sliceText(text, words, match)
+  const optionsOrMatch = typeof match === `function` ? match : {
+    escape,
+    boundary,
+    caseSensitive,
+  }
+  const slices = sliceText(text, words, optionsOrMatch)
 
   return createElement(containerTag, {
     ...props,
