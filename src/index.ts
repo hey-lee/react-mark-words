@@ -29,11 +29,11 @@ export interface MarkWordsProps {
   /** Word boundary matching behavior. Default: true */
   boundary?: boolean | 'start' | 'end'
   /** Custom component or HTML tag for marked text. Default: 'mark' */
-  markedTag?: string | React.ComponentType<any> | undefined
+  markedTag?: keyof HTMLElementTagNameMap | React.ComponentType<any> | undefined
   /** Custom component or HTML tag for unmarked text. Default: text-only component */
-  unmarkedTag?: string | React.ComponentType<any> | undefined
+  unmarkedTag?: keyof HTMLElementTagNameMap | React.ComponentType<any> | undefined
   /** Container element tag or component. Default: 'div' */
-  containerTag?: string | React.ComponentType<any> | undefined
+  containerTag?: keyof HTMLElementTagNameMap | React.ComponentType<any> | undefined
   /** Custom matching function */
   match?: (word: string) => RegExp
 }
