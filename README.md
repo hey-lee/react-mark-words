@@ -3,7 +3,7 @@
 
 A React component for mark and highlighting words within text with flexible word boundary matching and customizable styling.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://raw.githubusercontent.com/hey-lee/slice-text/refs/heads/main/LICENSE) [![size](https://img.shields.io/bundlephobia/min/slice-text)](https://bundlephobia.com/package/react-mark-words)
+[![size](https://img.shields.io/bundlephobia/min/reace-mark-words)](https://bundlephobia.com/package/react-mark-words) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://raw.githubusercontent.com/hey-lee/reace-mark-words/refs/heads/main/LICENSE)
 
 
 ## Features
